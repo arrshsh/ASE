@@ -44,7 +44,7 @@ function Login() {
     <div className="h-screen flex justify-center items-center bg-primary">
       <div className="bg-white p-5 rounded sm:w-[450px] w-[350px]">
         <h1 className="text-primary">
-          SMP -<span className="text-gray-400"> Login</span>
+          Surplus2Share -<span className="text-gray-400"> Login</span>
         </h1>
         <Divider></Divider>
         <Form layout="vertical" onFinish={onFinish}>
