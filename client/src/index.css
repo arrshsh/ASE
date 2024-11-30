@@ -31,6 +31,7 @@ select {
 button {
   height: 45px !important;
   box-shadow: none !important;
+  background-color: #f73b3b !important;
 }
 table {
   border: 1px solid #a1a1a1 !important;

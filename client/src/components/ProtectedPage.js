@@ -82,7 +82,7 @@ const ProtectedPage = ({ children }) => {
             className="text-2xl cursor-pointer text-white"
             onClick={() => navigate("/")}
           >
-            RMP
+            Surplus2Share
           </h1>
           <div>
             <div className="bg-white py-2 px-5 rounded flex gap-2 items-center">
