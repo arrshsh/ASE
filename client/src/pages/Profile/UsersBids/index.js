@@ -36,18 +36,18 @@ function Bids() {
 
       {bidsData < 1 && (
         <>
-          <h1 className="text-xl text-gray-500">There is no bids</h1>
+          <h1 className="text-xl text-gray-500">There are no requests</h1>
         </>
       )}
       {bidsData &&
         bidsData.map((bid) => {
           return (
             <div className="border border-solid border-gray-500 p-2 rounded-lg">
-              <h1>Product : {bid.product.name}</h1>
-              <h1>Seller : {bid.seller.name}</h1>
-              <h1>Offered Amount : &#x20B9;{bid.bidAmount}</h1>
+              <h1>Food Item : {bid.product.name}</h1>
+              <h1>Donor : {bid.seller.name}</h1>
+              <h1>Offered Time to Pickup : {bid.bidAmount} minutes</h1>
               <h1>
-                Bid Date : {moment(bid.createdAt).format("DD-MM-YY hh:mm A")}
+                Request Date : {moment(bid.createdAt).format("DD-MM-YY hh:mm A")}
               </h1>
               <h1>Message : {bid.message}</h1>
             </div>

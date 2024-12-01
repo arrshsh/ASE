@@ -84,44 +84,48 @@ function ProductInfo() {
           <Divider></Divider>
           <div className="flex flex-col">
             <h1 className="text-2xl text-orange-900 font-semibold uppercase">
-              Product details
+              Food Item details
             </h1>
             <div className="flex justify-between mt-2">
-              <span>Price</span>
-              <span>&#8377; {product.price}</span>
+              <span>Expected Shelf life</span>
+              <span> {product.price} hours</span>
             </div>
             <div className="flex justify-between mt-2">
               <span>Category</span>
               <span className="uppercase">{product.category}</span>
             </div>
             <div className="flex justify-between mt-2">
-              <span>Bill Available</span>
+              <span>Gluten-Free</span>
+              {/* Bill availabel to Gluten-Free  */}
               <span>{product.billAvailable ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
-              <span>Box Available</span>
+              <span>Diabetic-Friendly</span>
+              {/* box available to Diabetic-Friendly  */}
               <span>{product.boxAvailable ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
-              <span>Accessories Available</span>
+              <span>Senior-Friendly</span>
+              {/* Accessories Available to Senior-Friendly  */}
               <span>{product.accessoriesAvailable ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
-              <span>Warranty Available</span>
+              <span>Ready to pickup?</span>
+              {/* Warranty available to Ready to pickup?  */}
               <span>{product.warrantyAvailable ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
-              <span>Purchasd Year</span>
+              <span>Posted</span>
               <span>
-                {moment().subtract(product.age, "years").format("YYYY")} (
-                {product.age} years ago)
+                {moment().format("MM ")} 
+                minutes ago
               </span>
             </div>
           </div>
           <Divider></Divider>
           <div className="flex flex-col">
             <h1 className="text-2xl text-orange-900 font-semibold uppercase">
-              Seller Details
+              Donor Details
             </h1>
             <div className="flex justify-between mt-2">
               <span>Name</span>
@@ -135,12 +139,12 @@ function ProductInfo() {
           <Divider></Divider>
           <div className="flex flex-col">
             <div className="flex justify-between">
-              <h1 className="text-2xl font-semibold text-orange-900">Bids</h1>
+              <h1 className="text-2xl font-semibold text-orange-900">Requests</h1>
               <Button
                 onClick={() => setShowAddNewBid(!showAddNewBid)}
                 disabled={user._id === product.seller._id}
               >
-                New Bid
+                New Request 
               </Button>
             </div>
             <div className="flex flex-col gap-3 mt-5">
@@ -153,11 +157,11 @@ function ProductInfo() {
                         <span>{bid.buyer.name}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Bid amount</span>
-                        <span>&#8377; {bid.bidAmount}</span>
+                        <span>Ready to pick in </span>
+                        <span>{bid.bidAmount} minutes</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Bid Place On</span>
+                        <span>Request Placed On</span>
                         <span>
                           {moment(bid.createdAt).format("MMM D , YYYY hh:mm A")}
                         </span>

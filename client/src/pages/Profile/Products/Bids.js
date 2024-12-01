@@ -47,14 +47,14 @@ function Bids({ showBidsModal, setShowBidsModal, selectedProduct }) {
           <>
             <Divider></Divider>
             <h1 className="text-xl text-gray-500">
-              Product Name : {selectedProduct.name}
+              Food Item Name : {selectedProduct.name}
             </h1>
           </>
         )}
 
         {bidsData < 1 && (
           <>
-            <h1 className="text-xl text-gray-500">There is no bids</h1>
+            <h1 className="text-xl text-gray-500">There are no requests yet</h1>
           </>
         )}
         {bidsData &&
@@ -62,9 +62,9 @@ function Bids({ showBidsModal, setShowBidsModal, selectedProduct }) {
             return (
               <div className="border border-solid border-gray-500 p-2 rounded-lg">
                 <h1>Name : {bid.buyer.name}</h1>
-                <h1>Bid Amount : {bid.bidAmount}</h1>
+                <h1>Willing to pickup in : {bid.bidAmount}</h1>
                 <h1>
-                  Bid Date : {moment(bid.createdAt).format("DD-MM-YY hh:mm A")}
+                  Request Date : {moment(bid.createdAt).format("DD-MM-YY hh:mm A")}
                 </h1>
                 <h1>Message : {bid.message}</h1>
                 <h1>Phone : {bid.mobile}</h1>

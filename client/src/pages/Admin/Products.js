@@ -46,12 +46,15 @@ function Products() {
         {products &&
           products.map((item) => {
             return (
-              <div className="grid md:grid-cols-[200px_1fr_150px] border border-solid p-2 rounded-[10px]">
+              <div className="grid md:grid-cols-[500px_1fr_150px] border border-solid p-2 rounded-[10px]">
+                {/* changed md:grid-cols-[200px_1fr_150px] value from md:grid-cols-[200px_1fr_150px] to md:grid-cols-[500px_1fr_150px] for more breadth*/}
                 <div className="break-all break-words">
-                  <b>Product : </b>
+                  <b>Food Item : </b>
+                  {/* Product to Food Item */}
                   {item.name}
                   <p>
-                    <b>Seller : </b>
+                    <b>Donor Name : </b>
+                    {/* Seller to donor name  */}
                     {item.seller.name}
                   </p>
                   <p>
@@ -59,12 +62,14 @@ function Products() {
                     {item.description}
                   </p>
                   <p>
-                    <b>Age : </b>
+                    <b>Quantity (in lbs) : </b>
+                    {/* Age changed to Quantity (in lbs) */}
                     {item.age}
                   </p>
                   <p>
-                    <b>Price : </b>
-                    {item.price}rs
+                    <b>Shelf Life (in hours) : </b>
+                    {/* Price changed to shelf life  */}
+                    {item.price} 
                   </p>
 
                   <p>

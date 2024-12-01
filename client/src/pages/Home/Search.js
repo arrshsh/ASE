@@ -56,7 +56,8 @@ function Search() {
         })
       ) : (
         <div className="flex mt-[50%] justify-center items-center">
-          <h1 className="text-3xl overflow-hidden">No Product Found</h1>
+          <h1 className="text-3xl overflow-hidden">No Food Items Found</h1>
+          {/* changed no products found to No food items found  */}
         </div>
       )}
     </div>

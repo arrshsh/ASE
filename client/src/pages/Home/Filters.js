@@ -3,41 +3,41 @@ import React, { useEffect, useRef } from "react";
 import { getDefaultLocale } from "react-datepicker";
 
 const categories = [
-  { name: "Electronics", value: "electronics" },
+  { name: "Vegan", value: "electronics" },
   {
-    name: "Home",
-    value: "home",
-  },
-  {
-    name: "Fashion",
+    name: "Vegetarian",
     value: "fashion",
   },
   {
-    name: "Sports",
-    value: "sports",
+    name: "May contain eggs",
+    value: "home",
   },
   {
-    name: "Books",
+    name: "Non-Vegetarian",
     value: "books",
+  },
+  {
+    name: "Halal",
+    value: "sports",
   },
 ];
 
 const ages = [
-  { name: "0-2 years old", value: "0-2" },
+  { name: "0-2 hours", value: "0-2" },
   {
-    name: "3-5 years old",
+    name: "3-5 hours",
     value: "3-5",
   },
   {
-    name: "6-8 years old",
+    name: "6-8 hours",
     value: "6-8",
   },
   {
-    name: "9-12 years old",
+    name: "9-12 hours",
     value: "9-12",
   },
   {
-    name: "13+ years old",
+    name: "13+ hours",
     value: "12-20",
   },
 ];

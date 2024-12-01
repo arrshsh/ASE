@@ -10,10 +10,10 @@ function Profile() {
   return (
     <div>
       <Tabs defaultActiveKey="1">
-        <Tabs.TabPane tab="Products" key="1">
+        <Tabs.TabPane tab="History" key="1">
           <Products />
         </Tabs.TabPane>
-        <Tabs.TabPane tab="Bids" key="2">
+        <Tabs.TabPane tab="Requests" key="2">
           <UsersBids></UsersBids>
         </Tabs.TabPane>
         <Tabs.TabPane tab="General" key="3">

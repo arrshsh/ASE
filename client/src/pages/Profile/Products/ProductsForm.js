@@ -7,19 +7,19 @@ import Images from "./Images";
 const additionalThings = [
   {
     label: "Bill Available",
-    name: "billAvailable",
+    name: "Gluten Free",
   },
   {
     label: "Warranty Available",
-    name: "warrantyAvailable",
+    name: "Diabetic Friendly",
   },
   {
     label: "Accessories Available",
-    name: "accessoriesAvailable",
+    name: "Senior Friendly",
   },
   {
     label: "Box Available",
-    name: "boxAvailable",
+    name: "Ready to pick-up",
   },
 ];
 
@@ -97,7 +97,7 @@ function ProductsForm({
     >
       <div>
         <p className="text-xl text-center font-semibold text-primary">
-          {selectedProduct ? "Edit Product" : "Add Product"}
+          {selectedProduct ? "Edit Food Item" : "Add Food Item"}
         </p>
         <Tabs
           defaultActiveKey="1"
@@ -106,7 +106,7 @@ function ProductsForm({
         >
           <Tabs.TabPane key="1" tab="General">
             <Form layout="vertical" onFinish={onFinish} ref={formRef}>
-              <Form.Item label="Name" name="name" rules={rules}>
+              <Form.Item label="Food Item Name" name="name" rules={rules}>
                 <Input type="text"></Input>
               </Form.Item>
 
@@ -116,7 +116,7 @@ function ProductsForm({
 
               <Row gutter={[16, 16]}>
                 <Col span={8}>
-                  <Form.Item label="Price" name="price" rules={rules}>
+                  <Form.Item label="Shelf Life" name="price" rules={rules}>
                     <Input type="number"></Input>
                   </Form.Item>
                 </Col>
@@ -135,7 +135,7 @@ function ProductsForm({
                 </Col>
 
                 <Col span={8}>
-                  <Form.Item label="Age" name="age" rules={rules}>
+                  <Form.Item label="Quantity" name="age" rules={rules}>
                     <Input type="number"></Input>
                   </Form.Item>
                 </Col>
@@ -155,7 +155,7 @@ function ProductsForm({
                 })}
               </div>
               <Form.Item
-                name="showBidsOnProductPage"
+                name="Show Requests on Product Page"
                 valuePropName="checked"
                 className="mr-2"
               >

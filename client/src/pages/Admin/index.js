@@ -16,7 +16,8 @@ function Admin() {
   return (
     <div>
       <Tabs>
-        <Tabs.TabPane tab="Products" key="1">
+        <Tabs.TabPane tab="Donation Requests" key="1"> 
+          {/* changed the name of products tab to Donation Requests */}
           <Products></Products>
         </Tabs.TabPane>
         <Tabs.TabPane tab="Users" key="2">

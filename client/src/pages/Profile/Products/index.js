@@ -52,7 +52,7 @@ function Products() {
   return (
     <div>
       <div className="flex justify-between">
-        <h1 className="text-lg">Your Products</h1>
+        <h1 className="text-lg">Your Donations</h1>
         <Button
           type="default"
           onClick={() => {
@@ -60,7 +60,7 @@ function Products() {
             setSelectedProduct(null);
           }}
         >
-          Add Product
+          Add Food Item
         </Button>
       </div>
 
@@ -72,7 +72,7 @@ function Products() {
                 <div className="flex flex-col border justify-between border-solid  rounded-[10px] p-2">
                   <div className="bg-gray-300 h-10 flex-col flex  justify-center items-center rounded-lg">
                     <p>
-                      <b>Created At : </b>
+                      <b>Posted At : </b>
                       {moment(item.createdAt).format("DD-MM-YY hh:mm A")}
                     </p>
                   </div>
@@ -85,16 +85,16 @@ function Products() {
 
                     <div className="break-all flex flex-col break-words text-sm  justify-between px-3">
                       <p>
-                        <b>Name : </b>
+                        <b>Food Item : </b>
                         {item.name}
                       </p>
                       <p>
-                        <b>Age : </b>
+                        <b>Quantity : </b>
                         {item.age}
                       </p>
                       <p>
-                        <b>Price : </b>
-                        {item.price}rs
+                        <b>Shell Life : </b>
+                        {item.price} hrs
                       </p>
 
                       <p>
@@ -102,7 +102,7 @@ function Products() {
                         {item.category}
                       </p>
                       <p>
-                        <b>Stataus : </b>
+                        <b>Status : </b>
                         {item.status}
                       </p>
                     </div>
@@ -127,7 +127,7 @@ function Products() {
                         setSelectedProduct(item);
                       }}
                     >
-                      Show Bids
+                      Show Requests
                     </span>
                   </div>
                 </div>

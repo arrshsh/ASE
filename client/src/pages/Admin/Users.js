@@ -61,7 +61,8 @@ function Users() {
                   </p>
 
                   <p>
-                    <b>Created At : </b>
+                    <b>Joined on : </b> 
+                    {/* changed created to Joined on  */}
                     {moment(user.createdAt).format("DD-MM-YY hh:mm A")}
                   </p>
                   <p>

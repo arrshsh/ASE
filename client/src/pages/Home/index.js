@@ -61,7 +61,7 @@ function Home() {
           ></i>
           <input
             type="text"
-            placeholder="Search Products here..."
+            placeholder="Search Food items here..."
             className="border border-gray-300 rounded border-solid w-full h-14 p-2"
             value={searchQuery}
             onChange={(e) => {
@@ -109,7 +109,8 @@ function Home() {
                   <p className="text-sm">{product.description}</p>
                   <Divider></Divider>
                   <span className="text-xl font-semibold text-green-700">
-                    &#8377;{product.price}
+                  Perishes in: {product.price} hrs
+                    {/* changed &#8377;{product.price} to  */}
                   </span>
                 </div>
               </div>

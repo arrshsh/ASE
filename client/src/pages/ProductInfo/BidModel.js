@@ -31,8 +31,10 @@ function BidModel({ showBidModal, setShowBidModel, getData, product }) {
 
         // send notification to seller
         await AddNotification({
-          title: "A new bid has been placed",
-          message: `A new bid has been placed on your product ${product.name} by ${user.name} for ₹${values.bidAmount}`,
+          title: "A request received",
+          // changed title: "A new bid has been placed", to title: "A request received",
+          message: `A new request has been received on your food item ${product.name} by ${user.name}, willing to pickup in ${values.bidAmount} hours`,
+          // values.bidAmount to expected pickup time 
           user: product.seller._id,
           onClick: "/profile",
           read: false,
@@ -59,10 +61,11 @@ function BidModel({ showBidModal, setShowBidModel, getData, product }) {
     >
       <div className="flex flex-col gap-5 mb-5">
         <h1 className="text-2xl font-semibold text-orange-900 text-center">
-          New Bid
+          New Request
         </h1>
         <Form layout="vertical" ref={formRef} onFinish={onFinish}>
-          <Form.Item label="Bid Amount" name="bidAmount" rules={rules}>
+          <Form.Item label="Estimated Pick-up time" name="bidAmount" rules={rules}>
+            {/* changed bid amunt thingy to estimated pickup time  */}
             <Input></Input>
           </Form.Item>
 
