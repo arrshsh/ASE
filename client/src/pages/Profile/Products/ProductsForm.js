@@ -7,19 +7,19 @@ import Images from "./Images";
 const additionalThings = [
   {
     label: "Bill Available",
-    name: "Gluten Free",
+    name: "Cooked Food",
   },
   {
     label: "Warranty Available",
-    name: "Diabetic Friendly",
+    name: "Packed Food",
   },
   {
     label: "Accessories Available",
-    name: "Senior Friendly",
+    name: "User Visit and Pickup Allowed",
   },
   {
     label: "Box Available",
-    name: "Ready to pick-up",
+    name: "Willing to Deliver",
   },
 ];
 

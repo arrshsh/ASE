@@ -95,22 +95,22 @@ function ProductInfo() {
               <span className="uppercase">{product.category}</span>
             </div>
             <div className="flex justify-between mt-2">
-              <span>Gluten-Free</span>
+              <span>Cooked-Food</span>
               {/* Bill availabel to Gluten-Free  */}
               <span>{product.billAvailable ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
-              <span>Diabetic-Friendly</span>
+              <span>Packed Food</span>
               {/* box available to Diabetic-Friendly  */}
               <span>{product.boxAvailable ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
-              <span>Senior-Friendly</span>
+              <span>User Vist and Pickup Allowed</span>
               {/* Accessories Available to Senior-Friendly  */}
               <span>{product.accessoriesAvailable ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
-              <span>Ready to pickup?</span>
+              <span>Willing to Deliver?</span>
               {/* Warranty available to Ready to pickup?  */}
               <span>{product.warrantyAvailable ? "Yes" : "No"}</span>
             </div>
