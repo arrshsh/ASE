@@ -20,9 +20,11 @@ function Home() {
   const [filters, setFilters] = useState({
     status: "approved",
     category: [],
-    age: [],
+    Shelf: [],
     search: "",
   });
+
+  
   const { user } = useSelector((state) => state.users);
 
   async function getData() {

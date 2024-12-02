@@ -47,9 +47,9 @@ function Search() {
                 <h1 className="text-lg font-semibold">{product.name}</h1>
                 <p className="text-sm">{product.description}</p>
 
-                <span className="text-xl mt-2 font-semibold text-green-700">
+                {/* <span className="text-xl mt-2 font-semibold text-green-700">
                   &#8377;{product.price}
-                </span>
+                </span> */}
               </div>
             </div>
           );

@@ -1,4 +1,4 @@
-import { Avatar, Badge, message } from "antd";
+import { Avatar, Badge, message, Button } from "antd";
 import React, { useEffect, useState } from "react";
 import { GetCurrentUser } from "../apicalls/users";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SetLoader } from "../redux/loadersSlice";
 import { SetUser } from "../redux/usersSlice";
 import Notifications from "./Notifications";
+ 
 import {
   GetAllNotification,
   ReadAllNotification,
@@ -84,6 +85,11 @@ const ProtectedPage = ({ children }) => {
           >
             Surplus2Share
           </h1>
+          <div>
+          <Button className="mt-2" type="danger" htmlType="submit" block>
+            Submit
+          </Button>
+          </div>
           <div>
             <div className="bg-white py-2 px-5 rounded flex gap-2 items-center">
               <span

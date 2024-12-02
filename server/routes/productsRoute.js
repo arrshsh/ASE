@@ -18,7 +18,7 @@ router.post("/add-new-product", authMiddleware, async (req, res) => {
     const newNotification = new Notification({
       user: admins[0]._id,
       message: `New product added by ${user.name}`,
-      title: "New Product",
+      title: "New Food Listing",
       onClick: "/adimn",
       read: false,
     });
@@ -26,7 +26,7 @@ router.post("/add-new-product", authMiddleware, async (req, res) => {
 
     res.send({
       success: true,
-      message: "Product added successfully",
+      message: "Food listing added successfully",
     });
   } catch (error) {
     res.send({
@@ -39,7 +39,7 @@ router.post("/add-new-product", authMiddleware, async (req, res) => {
 //get all products
 router.post("/get-products", async (req, res) => {
   try {
-    const { seller, category = [], age = [], status } = req.body;
+    const { seller, category = [], Shelf = [], status } = req.body;
     let filters = {};
     if (seller) {
       filters.seller = seller;
@@ -54,11 +54,11 @@ router.post("/get-products", async (req, res) => {
     }
 
     // filters by age
-    if (age.length > 0) {
-      age.forEach((item) => {
-        const fromAge = item.split("-")[0];
-        const toAge = item.split("-")[1];
-        filters.age = { $gte: fromAge, $lte: toAge };
+    if (Shelf.length > 0) {
+      Shelf.forEach((item) => {
+        const fromS = item.split("-")[0];
+        const toS = item.split("-")[1];
+        filters.Shelf = { $gte: fromS, $lte: toS };
       });
     }
 
@@ -99,7 +99,7 @@ router.put("/edit-product/:id", authMiddleware, async (req, res) => {
     await Product.findByIdAndUpdate(req.params.id, req.body);
     res.send({
       success: true,
-      message: "Product updated successfully",
+      message: "Food listing updated successfully",
     });
   } catch (error) {
     res.send({
@@ -115,7 +115,7 @@ router.delete("/delete-product/:id", authMiddleware, async (req, res) => {
     await Product.findByIdAndDelete(req.params.id);
     res.send({
       success: true,
-      message: "Product deleted successfully",
+      message: "Food listing Deleted successfully",
     });
   } catch (error) {
     res.send({
@@ -172,8 +172,8 @@ router.put("/update-product-status/:id", authMiddleware, async (req, res) => {
     // send notification to seller
     const newNotification = new Notification({
       user: updatedProduct.seller,
-      message: `Your product ${updatedProduct.name} has been ${status}`,
-      title: "Product Status Updated",
+      message: `Your listing of ${updatedProduct.name} has been ${status}`,
+      title: "Food listing Status Updated",
       onClick: "/profile",
       read: false,
     });
@@ -182,7 +182,7 @@ router.put("/update-product-status/:id", authMiddleware, async (req, res) => {
 
     res.send({
       success: true,
-      message: "Product status updated successfully",
+      message: "Food listing status updated successfully",
     });
   } catch (error) {
     res.send({

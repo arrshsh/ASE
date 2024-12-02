@@ -116,7 +116,7 @@ function ProductsForm({
 
               <Row gutter={[16, 16]}>
                 <Col span={8}>
-                  <Form.Item label="Shelf Life" name="price" rules={rules}>
+                  <Form.Item label="Shelf Life (Hours)" name="price" rules={rules}>
                     <Input type="number"></Input>
                   </Form.Item>
                 </Col>
@@ -125,17 +125,17 @@ function ProductsForm({
                   <Form.Item label="Category" name="category" rules={rules}>
                     <select>
                       <option value="">Select</option>
-                      <option value="electronics">Electronics</option>
-                      <option value="fashion">Fashion</option>
-                      <option value="home">Home</option>
-                      <option value="books">Books</option>
-                      <option value="sports">Sports</option>
+                      <option value="vegetarian">Vegetarian</option>
+                      <option value="vegan">Vegan</option>
+                      <option value="non-vegetarian">Non Vegetarian</option>
+                      <option value="non-vegetarian-halal">Non Vegetarian(Halal)</option>
+                      <option value="may-contain-eggs">May Contain Eggs</option>
                     </select>
                   </Form.Item>
                 </Col>
 
                 <Col span={8}>
-                  <Form.Item label="Quantity" name="age" rules={rules}>
+                  <Form.Item label="Quantity (lbs)" name="age" rules={rules}>
                     <Input type="number"></Input>
                   </Form.Item>
                 </Col>
@@ -154,13 +154,13 @@ function ProductsForm({
                   );
                 })}
               </div>
-              <Form.Item
+              {/* <Form.Item
                 name="Show Requests on Product Page"
                 valuePropName="checked"
                 className="mr-2"
               >
                 <Checkbox>Show Bids on Product Page</Checkbox>
-              </Form.Item>
+              </Form.Item> */}
             </Form>
           </Tabs.TabPane>
           <Tabs.TabPane key="2" tab="Images" disabled={!selectedProduct}>

@@ -32,7 +32,7 @@ function Bids() {
 
   return (
     <div className="flex flex-col gap-5">
-      <h1 className="text-primary">Bids</h1>
+      <h1 className="text-primary">Requests</h1>
 
       {bidsData < 1 && (
         <>

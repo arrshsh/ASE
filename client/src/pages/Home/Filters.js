@@ -3,42 +3,43 @@ import React, { useEffect, useRef } from "react";
 import { getDefaultLocale } from "react-datepicker";
 
 const categories = [
-  { name: "Vegan", value: "electronics" },
   {
     name: "Vegetarian",
-    value: "fashion",
+    value: "vegetarian",
+  },
+  { name: "Vegan", 
+    value: "vegan" },
+  {
+    name: "Non-Vegetarian",
+    value: "non-vegetarian",
+  },
+  {
+    name: "Non-Vegetarian (Halal)",
+    value: "non-vegetarian-halal",
   },
   {
     name: "May contain eggs",
-    value: "home",
-  },
-  {
-    name: "Non-Vegetarian",
-    value: "books",
-  },
-  {
-    name: "Halal",
-    value: "sports",
+    value: "may-contain-eggs",
   },
 ];
 
-const ages = [
-  { name: "0-2 hours", value: "0-2" },
+const Shelfs = [
+  { name: "0-24 hours", value: "0-24" },
   {
-    name: "3-5 hours",
-    value: "3-5",
+    name: "24-72 hours",
+    value: "24-72",
   },
   {
-    name: "6-8 hours",
-    value: "6-8",
+    name: "72-120 hours",
+    value: "48-120",
   },
   {
-    name: "9-12 hours",
-    value: "9-12",
+    name: "120 - 240 hours",
+    value: "120-240",
   },
   {
-    name: "13+ hours",
-    value: "12-20",
+    name: "240+ hours",
+    value: "240",
   },
 ];
 
@@ -98,27 +99,27 @@ function Filters({
               })}
             </div>
           </div>
-          <h1 className="text-gray-500 mt-3 mb-2">Ages</h1>
+          <h1 className="text-gray-500 mt-3 mb-2">Shelf Life</h1>
           <div className="flex flex-col gap-3 justify-center">
-            {ages.map((age) => {
+            {Shelfs.map((Shelf) => {
               return (
                 <Checkbox
-                  name="age"
+                  name="Shelf"
                   onChange={(e) => {
                     if (e.target.checked) {
                       setFilters({
                         ...filters,
-                        age: [...filters.age, age.value],
+                        Shelf: [...filters.Shelf, Shelf.value],
                       });
                     } else {
                       setFilters({
                         ...filters,
-                        age: filters.age.filter((item) => item !== age.value),
+                        Shelf: filters.Shelf.filter((item) => item !== Shelf.value),
                       });
                     }
                   }}
                 >
-                  {age.name}
+                  {Shelf.name}
                 </Checkbox>
               );
             })}
