@@ -6,20 +6,20 @@ import { SetLoader } from "../../../redux/loadersSlice";
 import Images from "./Images";
 const additionalThings = [
   {
-    label: "Bill Available",
-    name: "Cooked Food",
+    label: "Cooked Food",
+    name: "cookedfood",
   },
   {
-    label: "Warranty Available",
-    name: "Packed Food",
+    label: "Packed Food",
+    name: "packedfood",
   },
   {
-    label: "Accessories Available",
-    name: "User Visit and Pickup Allowed",
+    label: "User Visit and Pickup Allowed",
+    name: "uservisit",
   },
   {
-    label: "Box Available",
-    name: "Willing to Deliver",
+    label: "Willing to Deliver",
+    name: "willingtodeliver",
   },
 ];
 
@@ -116,7 +116,7 @@ function ProductsForm({
 
               <Row gutter={[16, 16]}>
                 <Col span={8}>
-                  <Form.Item label="Shelf Life (Hours)" name="price" rules={rules}>
+                  <Form.Item label="Shelf Life (Hours)" name="shelf" rules={rules}>
                     <Input type="number"></Input>
                   </Form.Item>
                 </Col>
@@ -135,7 +135,7 @@ function ProductsForm({
                 </Col>
 
                 <Col span={8}>
-                  <Form.Item label="Quantity (lbs)" name="age" rules={rules}>
+                  <Form.Item label="Quantity (lbs)" name="quantity" rules={rules}>
                     <Input type="number"></Input>
                   </Form.Item>
                 </Col>
@@ -144,23 +144,24 @@ function ProductsForm({
                 {additionalThings.map((item) => {
                   return (
                     <Form.Item
-                      name={item.name}
-                      key={item.name}
-                      valuePropName="checked"
-                      className="mr-2"
-                    >
-                      <Checkbox>{item.name}</Checkbox>
-                    </Form.Item>
+                    label={item.label}
+                    name={item.name}
+                    valuePropName="checked"
+                  >
+                    <Input
+                      type="checkbox"
+                      value={item.name}
+                      onChange={(e) => {
+                        formRef.current.setFieldsValue({
+                          [item.name]: e.target.checked,
+                        });
+                      }}
+                      checked={formRef.current?.getFieldValue(item.name)}
+                    />
+                  </Form.Item>
                   );
                 })}
               </div>
-              {/* <Form.Item
-                name="Show Requests on Product Page"
-                valuePropName="checked"
-                className="mr-2"
-              >
-                <Checkbox>Show Bids on Product Page</Checkbox>
-              </Form.Item> */}
             </Form>
           </Tabs.TabPane>
           <Tabs.TabPane key="2" tab="Images" disabled={!selectedProduct}>

@@ -1,7 +1,7 @@
 import { Tabs } from "antd";
 import React from "react";
 import Products from "./Products";
-import UsersBids from "./UsersBids";
+import UsersRequests from "./UsersRequests";
 import { useSelector } from "react-redux";
 import moment from "moment";
 
@@ -14,7 +14,7 @@ function Profile() {
           <Products />
         </Tabs.TabPane>
         <Tabs.TabPane tab="Requests" key="2">
-          <UsersBids></UsersBids>
+          <UsersRequests></UsersRequests>
         </Tabs.TabPane>
         <Tabs.TabPane tab="General" key="3">
           <div className="flex flex-col lg:w-1/3">

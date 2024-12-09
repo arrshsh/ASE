@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Modal, message } from "antd";
 import { useDispatch } from "react-redux";
 import { SetLoader } from "../../../redux/loadersSlice";
-import { GetAllBids } from "../../../apicalls/product";
+import { GetAllRequests } from "../../../apicalls/product";
 import Divider from "../../../components/Divider";
 import moment from "moment";
 
-function Bids({ showBidsModal, setShowBidsModal, selectedProduct }) {
+function Requests({ showBidsModal, setShowBidsModal, selectedProduct }) {
   const [bidsData, setBidsData] = useState();
   const dispatch = useDispatch();
 
   async function getData() {
     try {
       dispatch(SetLoader(true));
-      const response = await GetAllBids({
+      const response = await GetAllRequests({
         product: selectedProduct._id,
       });
       dispatch(SetLoader(false));
@@ -77,4 +77,4 @@ function Bids({ showBidsModal, setShowBidsModal, selectedProduct }) {
   );
 }
 
-export default Bids;
+export default Requests;

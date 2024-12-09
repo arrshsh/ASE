@@ -5,16 +5,16 @@ const bidSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "products",
     },
-    seller: {
+    donor: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "users",
     },
-    buyer: {
+    reciever: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "users",
     },
-    bidAmount: {
-      type: Number,
+    time: {
+      type: String,
       required: true,
     },
     message: {

@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    price: {
+    shelf: {
       type: Number,
       required: true,
     },
@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    age: {
+    quantity: {
       type: Number,
       required: true,
     },
@@ -26,22 +26,22 @@ const productSchema = new mongoose.Schema(
       default: [],
       required: true,
     },
-    billAvailable: {
+    cookedfood: {
       type: Boolean,
       default: false,
       required: true,
     },
-    warrantyAvailable: {
+    packedfood: {
       type: Boolean,
       default: false,
       required: true,
     },
-    accessoriesAvailable: {
+    uservisit: {
       type: Boolean,
       default: false,
       required: true,
     },
-    boxAvailable: {
+    willingtodeliver: {
       type: Boolean,
       default: false,
       required: true,

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SetLoader } from "../../redux/loadersSlice";
 import { Button, message } from "antd";
-import { GetAllBids, GetProductById } from "../../apicalls/product";
+import { GetAllRequests, GetProductById } from "../../apicalls/product";
 import Divider from "../../components/Divider";
 import { useNavigate, useParams } from "react-router-dom";
 import moment from "moment";
-import BidModel from "./BidModel";
+import BidModel from "./RequestModel";
 
 function ProductInfo() {
   const { user } = useSelector((state) => state.users);
@@ -23,7 +23,7 @@ function ProductInfo() {
       const response = await GetProductById(id);
       dispatch(SetLoader(false));
       if (response.success) {
-        const bidsResponse = await GetAllBids({ product: id });
+        const bidsResponse = await GetAllRequests({ product: id });
         setProduct({ ...response.data, bids: bidsResponse.data });
       }
     } catch (error) {
@@ -97,30 +97,30 @@ function ProductInfo() {
             <div className="flex justify-between mt-2">
               <span>Cooked-Food</span>
               {/* Bill availabel to Gluten-Free  */}
-              <span>{product.billAvailable ? "Yes" : "No"}</span>
+              <span>{product.cookedfood ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
               <span>Packed Food</span>
               {/* box available to Diabetic-Friendly  */}
-              <span>{product.boxAvailable ? "Yes" : "No"}</span>
+              <span>{product.packedfood ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
               <span>User Vist and Pickup Allowed</span>
               {/* Accessories Available to Senior-Friendly  */}
-              <span>{product.accessoriesAvailable ? "Yes" : "No"}</span>
+              <span>{product.uservisit ? "Yes" : "No"}</span>
             </div>
             <div className="flex justify-between mt-2">
               <span>Willing to Deliver?</span>
               {/* Warranty available to Ready to pickup?  */}
-              <span>{product.warrantyAvailable ? "Yes" : "No"}</span>
+              <span>{product.willingtodeliver ? "Yes" : "No"}</span>
             </div>
-            <div className="flex justify-between mt-2">
+            {/* <div className="flex justify-between mt-2">
               <span>Posted</span>
               <span>
                 {moment().format("MM ")} 
                 minutes ago
               </span>
-            </div>
+            </div> */}
           </div>
           <Divider></Divider>
           <div className="flex flex-col">

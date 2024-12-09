@@ -17,9 +17,9 @@ router.post("/add-new-product", authMiddleware, async (req, res) => {
     const admins = await User.find({ role: "admin" });
     const newNotification = new Notification({
       user: admins[0]._id,
-      message: `New product added by ${user.name}`,
+      message: `New product added`,
       title: "New Food Listing",
-      onClick: "/adimn",
+      onClick: "/admin",
       read: false,
     });
     await newNotification.save();
@@ -53,7 +53,7 @@ router.post("/get-products", async (req, res) => {
       filters.category = { $in: category };
     }
 
-    // filters by age
+    // filters by shelf life
     if (Shelf.length > 0) {
       Shelf.forEach((item) => {
         const fromS = item.split("-")[0];

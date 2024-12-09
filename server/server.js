@@ -10,12 +10,12 @@ const port = process.env.PORT || 6000;
 
 const usersRoute = require("./routes/usersRoute");
 const productsRoute = require("./routes/productsRoute");
-const bidsRoute = require("./routes/bidsRoute");
+const bidsRoute = require("./routes/requestsRoute");
 const notificationsRoute = require("./routes/notificationnsRoute");
 
 app.use("/api/users", usersRoute);
 app.use("/api/products", productsRoute);
-app.use("/api/bids", bidsRoute);
+app.use("/api/requests", bidsRoute);
 app.use("/api/notifications", notificationsRoute);
 
 

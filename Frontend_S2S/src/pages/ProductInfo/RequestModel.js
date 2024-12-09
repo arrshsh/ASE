@@ -2,10 +2,10 @@ import { Form, Input, Modal, message } from "antd";
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SetLoader } from "../../redux/loadersSlice";
-import { PlaceNewBid } from "../../apicalls/product";
+import { PlaceNewRequest } from "../../apicalls/product";
 import { AddNotification } from "../../apicalls/Notifications";
 
-function BidModel({ showBidModal, setShowBidModel, getData, product }) {
+function RequestModel({ showBidModal, setShowBidModel, getData, product }) {
   const { user } = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const formRef = useRef(null);
@@ -19,7 +19,7 @@ function BidModel({ showBidModal, setShowBidModel, getData, product }) {
   async function onFinish(values) {
     try {
       dispatch(SetLoader(true));
-      const response = await PlaceNewBid({
+      const response = await PlaceNewRequest({
         ...values,
         product: product._id,
         seller: product.seller._id,
@@ -33,7 +33,7 @@ function BidModel({ showBidModal, setShowBidModel, getData, product }) {
         await AddNotification({
           title: "A request received",
           // changed title: "A new bid has been placed", to title: "A request received",
-          message: `A new request has been received on your food item ${product.name} by ${user.name}, willing to pickup in ${values.bidAmount} hours`,
+          message: `A new request has been received on your food item ${product.name} by ${user.name}, willing to pickup at ${values.bidAmount} `,
           // values.bidAmount to expected pickup time 
           user: product.seller._id,
           onClick: "/profile",
@@ -64,7 +64,7 @@ function BidModel({ showBidModal, setShowBidModel, getData, product }) {
           New Request
         </h1>
         <Form layout="vertical" ref={formRef} onFinish={onFinish}>
-          <Form.Item label="Estimated Pick-up time" name="bidAmount" rules={rules}>
+          <Form.Item label="Estimated Pick-up time" name="time" rules={rules}>
             {/* changed bid amunt thingy to estimated pickup time  */}
             <Input></Input>
           </Form.Item>
@@ -82,4 +82,4 @@ function BidModel({ showBidModal, setShowBidModel, getData, product }) {
   );
 }
 
-export default BidModel;
+export default RequestModel;

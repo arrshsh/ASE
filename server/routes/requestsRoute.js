@@ -1,15 +1,15 @@
 const router = require("express").Router();
-const Bid = require("../models/bidModal");
+const Req = require("../models/requestModal");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-//place a new bid
-router.post("/place-new-bid", authMiddleware, async (req, res) => {
+
+router.post("/place-new-request", authMiddleware, async (req, res) => {
   try {
-    const newBid = new Bid(req.body);
-    await newBid.save();
+    const newReq = new Req(req.body);
+    await newReq.save();
     res.send({
       success: true,
-      message: "Bid placed successfully",
+      message: "Request placed successfully",
     });
   } catch (error) {
     res.send({
@@ -19,8 +19,8 @@ router.post("/place-new-bid", authMiddleware, async (req, res) => {
   }
 });
 
-// get all bids
-router.post("/get-all-bids", authMiddleware, async (req, res) => {
+
+router.post("/get-all-requests", authMiddleware, async (req, res) => {
   try {
     const { product, seller, buyer } = req.body;
     let filters = {};
@@ -33,14 +33,14 @@ router.post("/get-all-bids", authMiddleware, async (req, res) => {
     if (buyer) {
       filters.buyer = buyer;
     }
-    const bids = await Bid.find(filters)
+    const Reqs = await Req.find(filters)
       .populate("product")
       .populate("buyer")
       .populate("seller")
       .sort({ createdAt: -1 });
     res.send({
       success: true,
-      data: bids,
+      data: Reqs,
     });
   } catch (error) {
     res.send({

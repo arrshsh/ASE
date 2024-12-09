@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SetLoader } from "../../../redux/loadersSlice";
 import { DeleteProduct, GetProducts } from "../../../apicalls/product";
 import moment from "moment";
-import Bids from "./Bids";
+import Requests from "./Requests";
 import Divider from "../../../components/Divider";
 
 function Products() {
@@ -146,11 +146,11 @@ function Products() {
       )}
 
       {showBidsModal && (
-        <Bids
+        <Requests
           setShowBidsModal={setShowBidsModal}
           showBidsModal={showBidsModal}
           selectedProduct={selectedProduct}
-        ></Bids>
+        ></Requests>
       )}
     </div>
   );

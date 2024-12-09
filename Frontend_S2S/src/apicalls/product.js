@@ -1,4 +1,4 @@
-import { axiosInstance } from "./axiosInstance";
+import { axiosInstance } from "./axiosSurplus";
 
 //add a new product
 export const AddProduct = async (payload) => {
@@ -88,8 +88,8 @@ export const UpdateProductStatus = async (id, status) => {
   }
 };
 
-//place a new bid
-export async function PlaceNewBid(payload) {
+//place a request
+export async function PlaceNewRequest(payload) {
   try {
     const response = await axiosInstance.post(
       "/api/bids/place-new-bid",
@@ -101,8 +101,8 @@ export async function PlaceNewBid(payload) {
   }
 }
 
-//get all bids
-export async function GetAllBids(filters) {
+//get all request
+export async function GetAllRequests(filters) {
   try {
     const response = await axiosInstance.post(
       "/api/bids/get-all-bids",
